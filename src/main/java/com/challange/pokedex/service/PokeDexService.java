@@ -236,7 +236,7 @@ public class PokeDexService {
 			logger.info("Response Code: " + response.statusCode());
 			pokemonResult.setResponseCode(response.statusCode());
 			// print response body
-			logger.debug("Response Body: " + response.body());
+			logger.info("Response Body: " + response.body());
 			JSONParser parse = new JSONParser();
 			try {
 				JSONObject data_obj = (JSONObject) parse.parse(response.body());
