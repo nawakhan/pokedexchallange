@@ -160,7 +160,7 @@ public class PokeDexService {
 								if (new_obj.get("flavor_text") != null) {
 									String strDesc = (String) new_obj.get("flavor_text");
 									logger.info("Description: " + strDesc);
-									pokemon.setStandardDescription(strDesc);
+									pokemon.setDescription(strDesc);
 								}
 								break;
 							}
@@ -222,7 +222,7 @@ public class PokeDexService {
 		}
 		// Apply Yoda Transaction
 		Map<Object, Object> data = new HashMap<>();
-		data.put("text", pokemon.getStandardDescription());
+		data.put("text", pokemon.getDescription());
 
 		HttpRequest request = HttpRequest.newBuilder().POST(buildFormDataFromMap(data)).uri(URI.create(uri))
 				.setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
@@ -245,7 +245,7 @@ public class PokeDexService {
 						JSONObject jsonObj = (JSONObject) data_obj.get("contents");
 						if (jsonObj.containsKey("translated")) {
 							String translated = (String) jsonObj.get("translated");
-							pokemon.setStandardDescription(translated);
+							pokemon.setDescription(translated);
 							pokemonResult.setPokemon(pokemon);
 						}
 					}

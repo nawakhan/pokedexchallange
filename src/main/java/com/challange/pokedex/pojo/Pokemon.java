@@ -9,11 +9,11 @@ package com.challange.pokedex.pojo;
 public class Pokemon {
 
 	private String name;
-	
-	private String standardDescription;
-	
+
+	private String description;
+
 	private String habitat;
-	
+
 	private Boolean isLegendary;
 
 	public String getName() {
@@ -24,12 +24,12 @@ public class Pokemon {
 		this.name = name;
 	}
 
-	public String getStandardDescription() {
-		return standardDescription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setStandardDescription(String standardDescription) {
-		this.standardDescription = standardDescription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getHabitat() {
@@ -47,7 +47,5 @@ public class Pokemon {
 	public void setIsLegendary(Boolean isLegendary) {
 		this.isLegendary = isLegendary;
 	}
-
-
 
 }
